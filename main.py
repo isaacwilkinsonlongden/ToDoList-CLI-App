@@ -1,5 +1,5 @@
 import os
-from file import *
+from storage import *
 
 
 def main():
