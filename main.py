@@ -1,8 +1,9 @@
 import os
+from file import *
 
 
 def main():
-    tasks = []
+    tasks = load_tasks("tasks.txt")
     interface(tasks)
 
 
@@ -23,6 +24,7 @@ def interface(tasks):
             clear()
             task = input("Type your task: ")
             tasks.append(task)
+            save_tasks(tasks, "tasks.txt")
         elif choice == "2":
             clear()
             display_tasks(tasks)
@@ -39,6 +41,7 @@ def interface(tasks):
                 print(f"Deleted task number {deleted_num}")
                 print("Updated list:")
                 display_tasks(tasks)
+                save_tasks(tasks, "tasks.txt")
                 input("Press ENTER to return to menu")
         elif choice == "4":
             break
